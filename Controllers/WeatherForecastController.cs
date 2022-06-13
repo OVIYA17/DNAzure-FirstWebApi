@@ -13,7 +13,7 @@ namespace MyWebApiAzure.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering","Haze" "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering","Haze","Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
