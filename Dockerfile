@@ -10,5 +10,5 @@ RUN dotnet publish -c Release -o outdir
 
 FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS final
 WORKDIR /app
-COPY --from=build/src/outdir /app
+COPY --from=build/src/outdir ./
 ENTRYPOINT ["dotnet", "MyWebApiAzure.dll"]
