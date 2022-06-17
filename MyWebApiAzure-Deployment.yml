@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: MyWebApiAzure-deployment
+  labels:
+    app:  MyWebApiAzure 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  MyWebApiAzure	  
+  template:
+    metadata:
+      labels:
+        app:  MyWebApiAzure
+    spec:
+      containers:
+      - name:  MyWebApiAzure
+        image:  MyWebApiAzure:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name:
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  MyWebApiAzuresvc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app:  MyWebApiAzure
